@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #1e1e1e;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .confirmation-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .confirmation-box p {
+            font-size: 18px;
+            margin: 15px 0;
+            color: #555;
+        }
+
+        .confirmation-box .highlight {
+            font-size: 20px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .confirmation-box .status {
+            color: green;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .confirmation-box button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #1e1e1e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .confirmation-box button:hover {
+            background-color: #ffcc00;
+        }
+
+        .back-to-dashboard {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .back-to-dashboard a {
+            color: #1e1e1e;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .back-to-dashboard a:hover {
+            color: #ffcc00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="dashboard.html">Home</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+        <a href="portal.html">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h1>Payment Confirmation</h1>
+
+        <div class="confirmation-box">
+            <p class="highlight">Thank you for your payment!</p>
+            <p>We have received your payment for the course:</p>
+            <p><strong>Course:</strong> <span id="confirmed-course"></span></p>
+            <p><strong>Mode of Study:</strong> <span id="confirmed-mode"></span></p>
+            <p><strong>Amount Paid:</strong> $300</p> <!-- Amount can be updated based on course -->
+
+            <p class="status">Payment Successful</p>
+
+            <button onclick="redirectToDashboard()">Go to Dashboard</button>
+        </div>
+
+        <div class="back-to-dashboard">
+            <p>If you wish to view more courses or make changes, <a href="dashboard.html">click here</a> to return to the dashboard.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Your Portal. All rights reserved.
+    </footer>
+
+    <script>
+        // Retrieve course and mode from URL parameters (just like the payment.html)
+        const urlParams = new URLSearchParams(window.location.search);
+        const confirmedCourse = urlParams.get('course');
+        const confirmedMode = urlParams.get('mode');
+
+        // Display confirmed course and mode of study
+        document.getElementById('confirmed-course').textContent = confirmedCourse;
+        document.getElementById('confirmed-mode').textContent = confirmedMode;
+
+        // Redirect user back to dashboard
+        function redirectToDashboard() {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+
+</body>
+</html>

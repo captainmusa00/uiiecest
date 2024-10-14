@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIIECEST Bama Skills Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+<script src="assets/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.jpeg" alt="UIIECEST Bama Logo"> <!-- Replace with your logo path -->
+            </div>
+            <div class="site-name">
+                <h1>UIIECEST Bama Digital and AI Technology Skills Hub</h1>
+            </div>
+            <div class="hamburger-icon" id="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
+            <nav class="nav-bar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Courses</a>
+                        <ul class="dropdown-content">
+                            <li><a href="conventional.html">Conventional</a></li>
+                            <li><a href="online.html">Online</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portal.html">Portal</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <div class="close-btn" onclick="toggleSidebar()">&times;</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Courses</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Conventional</a></li>
+                        <li><a href="#">Online</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Portal</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="hero">
+        <div class="slides">
+            <!-- Slide 1: Video -->
+            <div class="slide active">
+                <video autoplay muted loop class="bg-video">
+                    <source src="ai.mp4" type="video/mp4"> <!-- Replace with your video path -->
+                    Your browser does not support the video tag.
+                </video>
+                <div class="text-overlay">
+                    <h2>Welcome to UIIECEST Bama</h2>
+                    <p>Empowering Skills Through Technology</p>
+                </div>
+            </div>
+            <!-- Slide 2: Image -->
+            <div class="slide active">
+                <video autoplay muted loop class="bg-video">
+                    <source src="code.mp4" type="video/mp4"> <!-- Replace with your video path -->
+                    Your browser does not support the video tag.
+                </video>
+                <div class="text-overlay">
+                    <h2>Innovative Learning</h2>
+                    <p>Explore our cutting-edge courses.</p>
+                </div>
+            </div>
+            <!-- Slide 3: Image -->
+            <div class="slide">
+                <img src="3.png" alt="Image Slide 2"> <!-- Replace with your image path -->
+                <div class="text-overlay">
+                    <h2>Expert Instructors</h2>
+                    <p>Learn from industry professionals.</p>
+                </div>
+            </div>
+            <!-- Slide 4: Image -->
+            <div class="slide">
+                <img src="image3.jpg" alt="Image Slide 3"> <!-- Replace with your image path -->
+                <div class="text-overlay">
+                    <h2>Join Our Community</h2>
+                    <p>Connect with fellow learners and experts.</p>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </section>
+<section class="about-us">
+    <h2>About Us</h2>
+    <p>
+        At UIIECEST Bama, we are committed to empowering individuals with the skills and knowledge necessary 
+        to thrive in a rapidly evolving digital landscape. Our innovative courses, expert instructors, 
+        and supportive community provide an unparalleled learning experience. Whether you're seeking 
+        conventional or online education, we are here to help you achieve your goals and unlock your 
+        full potential.
+    </p>
+    <a href="#" class="cta-button">Learn More</a>
+</section>
+<section class="why-choose-us">
+    <h2>Why Choose Us?</h2>
+    <div class="features">
+        <div class="feature">
+            <h3>Expert Instructors</h3>
+            <p>Learn from experienced professionals who are dedicated to your success.</p>
+        </div>
+        <div class="feature">
+            <h3>Flexible Learning</h3>
+            <p>Choose from conventional or online courses that fit your schedule.</p>
+        </div>
+        <div class="feature">
+            <h3>Hands-On Experience</h3>
+            <p>Gain practical skills through real-world projects and interactive learning.</p>
+        </div>
+        <div class="feature">
+            <h3>Supportive Community</h3>
+            <p>Join a vibrant community that fosters collaboration and growth.</p>
+        </div>
+    </div>
+</section>
+
+<section class="featured-courses">
+    <h2>Featured Courses</h2>
+    <div class="course-cards">
+        <div class="course-card" data-course="agricultural-education">
+            <img src="images/agric.jpeg" alt="Agricultural Education">
+            <h3>Agricultural Education</h3>
+            <p>Explore the fundamentals of modern agricultural practices and sustainable farming techniques.</p>
+            <a href="#" class="course-btn" onclick="openModal('agricultural-education')">View Course</a>
+        </div>
+        <div class="course-card" data-course="automobile-technology">
+            <img src="images/automobile.jpeg" alt="Automobile Technology">
+            <h3>Automobile Technology</h3>
+            <p>Learn about the latest advancements in automotive engineering and repair techniques.</p>
+            <a href="#" class="course-btn" onclick="openModal('automobile-technology')">View Course</a>
+        </div>
+        <div class="course-card" data-course="electrical-electronics">
+            <img src="images/graphic-design-bg.jpg" alt="Electrical Electronics Technology">
+            <h3>Graphics Design</h3>
+            <p>Unleash your creativity with graphic design principles, including typography, color theory, and composition.</p>
+            <a href="#" class="course-btn" onclick="openModal('electrical-electronics')">View Course</a>
+        </div>
+        <div class="course-card" data-course="web-development-ai">
+            <img src="images/website_design.png" alt="Web Development Using AI">
+            <h3>Web Development Using AI</h3>
+            <p>Master web development skills with cutting-edge AI tools and techniques.</p>
+            <a href="#" class="course-btn" onclick="openModal('web-development-ai')">View Course</a>
+        </div>
+    </div>
+
+    <!-- Modal for Course Details -->
+    <div id="course-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-course-title">Course Title</h2>
+            <div class="modal-details">
+                <div class="modal-card">
+                    <h3>Why Enroll</h3>
+                    <p id="modal-why-enroll"></p>
+                </div>
+                <div class="modal-card">
+                    <h3>Aims and Objectives</h3>
+                    <p id="modal-aims-objectives"></p>
+                </div>
+                <div class="modal-card">
+                    <h3>What You Will Gain</h3>
+                    <p id="modal-what-you-will-gain"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta-section">
+    <div class="cta-container">
+        <h2 class="cta-title">Enroll Now</h2>
+        <p class="cta-subtitle">
+            Take the first step towards your future! Join our community of learners and gain the skills you need 
+            to succeed in your chosen field. Our courses are designed to empower you with practical knowledge 
+            and real-world experience.
+        </p>
+        <a href="portal.html" class="cta-button">Register Now</a>
+    </div>
+</section>
+<section class="faq-section">
+    <div class="faq-container">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">What courses do you offer?</h3>
+            <p class="faq-answer">We offer a wide range of courses in various fields, including technology, health, business, and arts. You can find detailed descriptions of each course on our courses page.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">How do I enroll in a course?</h3>
+            <p class="faq-answer">To enroll in a course, simply visit our registration portal and follow the instructions. You will need to provide some basic information and pay the required fees.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What is the duration of the courses?</h3>
+            <p class="faq-answer">Course durations vary depending on the program. Most courses are designed to be completed within a few weeks to a few months.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Is there any certification provided?</h3>
+            <p class="faq-answer">Yes, upon successful completion of a course, you will receive a certificate that can be shared on your resume or LinkedIn profile.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Can I access the courses on mobile?</h3>
+            <p class="faq-answer">Absolutely! Our courses are designed to be mobile-friendly, so you can learn anytime, anywhere.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="contact-container">
+        <h2 class="contact-title">Contact Us</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+        <section class="map-location">
+            <h2>Our Location</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8066501.077650407!2d2.295698627222122!3d9.179599772955923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1106ab3707b01e35%3A0x199c2e1d07046f49!2sUmar%20Ibn%20El%20Kanemi%20College%20Of%20Education%20Science%20And%20Technology!5e0!3m2!1sen!2sng!4v1728913350173!5m2!1sen!2sng" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+    </div>
+</section>
+
+<script>
+    const courseDetails = {
+        'agricultural-education': {
+            title: 'Agricultural Education',
+            whyEnroll: 'Explore modern agricultural practices and contribute to sustainable farming.',
+            aimsObjectives: 'To educate students on agricultural methods and sustainable practices.',
+            whatYouWillGain: 'You will gain hands-on experience in farming and agricultural technologies.'
+        },
+        'automobile-technology': {
+            title: 'Automobile Technology',
+            whyEnroll: 'Understand the latest trends in automotive technology and enhance your repair skills.',
+            aimsObjectives: 'To train students on the principles of automobile engineering and repair methodologies.',
+            whatYouWillGain: 'You will acquire the skills to diagnose and repair various automobile issues effectively.'
+        },
+        'electrical-electronics': {
+            title: 'Electrical Electronics Technology',
+            whyEnroll: 'Learn about advanced electrical systems and electronics to stay ahead in this evolving field.',
+            aimsObjectives: 'To prepare students with hands-on training in electrical and electronic systems.',
+            whatYouWillGain: 'You will become proficient in designing and maintaining electrical circuits and systems.'
+        },
+        'web-development-ai': {
+            title: 'Web Development Using AI',
+            whyEnroll: 'Harness the power of AI in web development to create smart, user-friendly applications.',
+            aimsObjectives: 'To equip students with the skills needed to integrate AI technologies into web solutions.',
+            whatYouWillGain: 'You will learn how to build modern web applications that utilize AI for enhanced functionality.'
+        }
+    };
+
+    function openModal(courseId) {
+        const course = courseDetails[courseId];
+        document.getElementById('modal-course-title').innerText = course.title;
+        document.getElementById('modal-why-enroll').innerText = course.whyEnroll;
+        document.getElementById('modal-aims-objectives').innerText = course.aimsObjectives;
+        document.getElementById('modal-what-you-will-gain').innerText = course.whatYouWillGain;
+        document.getElementById('course-modal').style.display = "block"; // Show modal
+    }
+
+    function closeModal() {
+        document.getElementById('course-modal').style.display = "none"; // Hide modal
+    }
+
+    // Close modal when clicking outside of the modal content
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('course-modal')) {
+            closeModal();
+        }
+    }
+</script>
+
+
+<footer class="custom-footer">
+    <div class="footer-container">
+        <div class="footer-section who-we-are">
+            <h3>Who We Are</h3>
+            <p>We are a dedicated team committed to providing quality education and innovative solutions to empower our community.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section get-in-touch">
+            <h3>Get in Touch</h3>
+            <p>Email: info@yourcompany.com</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 123 Your Street, Your City, Your Country</p>
+        </div>
+
+        <div class="footer-section quick-links">
+            <h3>Quick Links</h3>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="courses.html">Courses</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 UIIECEST Bama Digital and AI Technology Skills Hub. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.style.display = index === slideIndex ? "block" : "none";
+            });
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            showSlides();
+        }
+
+        function autoSlide() {
+            slideIndex++;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            showSlides();
+        }
+
+        showSlides();
+        setInterval(autoSlide, 7000); // Change slide every 7 seconds
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+    });
+});
+
+    </script>
+</body>
+</html>

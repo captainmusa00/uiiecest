@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #1e1e1e;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .summary {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .summary h2 {
+            font-size: 24px;
+            color: #444;
+        }
+
+        .summary p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 18px;
+            color: #555;
+            display: block;
+            margin: 15px 0 5px;
+        }
+
+        select, input[type="radio"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .payment-options label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #1e1e1e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffcc00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="dashboard.html">Home</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+        <a href="portal.html">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h1>Payment Details</h1>
+
+        <div class="summary">
+            <h2>Course Summary</h2>
+            <p><strong>Selected Course:</strong> <span id="selected-course"></span></p>
+            <p><strong>Mode of Study:</strong> <span id="selected-mode"></span></p>
+            <p><strong>Amount:</strong> $300</p> <!-- You can modify this as needed -->
+        </div>
+
+        <form id="payment-form" action="confirmation.html" method="POST">
+            <label for="payment-method">Choose Payment Method:</label>
+            <div class="payment-options">
+                <label>
+                    <input type="radio" name="payment-method" value="credit-card" required> Credit Card
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="paypal" required> PayPal
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="bank-transfer" required> Bank Transfer
+                </label>
+            </div>
+
+            <button type="submit">Proceed to Payment</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2024 Your Portal. All rights reserved.
+    </footer>
+
+    <script>
+        // Retrieve selected course and mode of study from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedCourse = urlParams.get('course');
+        const selectedMode = urlParams.get('mode');
+
+        // Display the selected course and mode of study
+        document.getElementById('selected-course').textContent = selectedCourse;
+        document.getElementById('selected-mode').textContent = selectedMode;
+
+        // Handle form submission (just as a placeholder, will redirect to confirmation page)
+        const paymentForm = document.getElementById('payment-form');
+        paymentForm.addEventListener('submit', function(event) {
+            // You can add more logic for payment processing here if necessary
+            alert('Redirecting to payment gateway...');
+        });
+    </script>
+</body>
+</html>

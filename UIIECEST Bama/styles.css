@@ -1,0 +1,845 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 10px 0;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+.site-name h1 {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+/* Hamburger Icon for Mobile */
+.hamburger-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffcc00;
+}
+
+/* Navigation Bar (Desktop) */
+.nav-bar {
+    flex-grow: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #222;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 160px;
+}
+
+.dropdown-content li {
+    display: block;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.nav-links li:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a {
+    color: #fff;
+}
+
+.dropdown-content li a:hover {
+    color: #ffcc00;
+}
+
+/* Sidebar for Mobile */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden initially */
+    width: 250px;
+    height: 100%;
+    background-color: #222;
+    color: #fff;
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.sidebar nav {
+    margin-left: 20px;
+}
+
+.sidebar .nav-links {
+    flex-direction: column;
+    list-style: none;
+}
+
+.sidebar .nav-links li {
+    margin-bottom: 15px;
+}
+
+.sidebar .nav-links li a {
+    color: #fff;
+}
+
+.sidebar .nav-links li a:hover {
+    color: #ffcc00;
+}
+
+/* Show sidebar when the class 'open' is applied */
+.sidebar.open {
+    left: 0;
+}
+
+/* Close button for sidebar */
+.close-btn {
+    color: #ffcc00;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    display: none; /* Hide all slides initially */
+    height: 100%;
+}
+
+.slide.active {
+    display: block; /* Show active slide */
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.text-overlay h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.text-overlay p {
+    font-size: 18px;
+}
+
+/* Controls */
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ffcc00;
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1e1e1e;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger-icon {
+        display: block; /* Show hamburger icon on mobile */
+    }
+
+    .nav-bar {
+        display: none; /* Hide nav bar on mobile */
+    }
+
+    .sidebar.open {
+        left: 0; /* Show sidebar on mobile */
+    }
+
+    .hero {
+        height: 300px; /* Adjust hero height for mobile */
+    }
+
+    .text-overlay h2 {
+        font-size: 24px;
+    }
+
+    .text-overlay p {
+        font-size: 16px;
+    }
+
+    .controls {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        margin: 10px 0;
+    }
+}
+
+.about-us {
+    background-color: #ffffff; /* Background color for the About Us section */
+    padding: 40px 20px;
+    text-align: center; /* Center-align text */
+    margin: 40px 0; /* Margin to separate from other sections */
+}
+
+.about-us h2 {
+    font-size: 32px;
+    font-weight: 600; /* Bold font for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.about-us p {
+    font-size: 18px; /* Font size for the paragraph */
+    line-height: 1.6; /* Improved line height for readability */
+    margin-bottom: 30px; /* Space below the paragraph */
+}
+
+.cta-button {
+    background-color: #1e1e1e; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.cta-button:hover {
+    background-color: #ffcc00; /* Change background color on hover */
+}
+.why-choose-us {
+    background-color: #f0f0f0; /* Light background color */
+    padding: 40px 20px;
+    text-align: center; /* Center-align text */
+    margin: 40px 0; /* Margin to separate from other sections */
+    animation: fadeIn 1s ease; /* Animation for fading in the section */
+}
+
+.why-choose-us h2 {
+    font-size: 32px;
+    font-weight: 600; /* Bold font for the heading */
+    margin-bottom: 30px; /* Space below the heading */
+    color: #1e1e1e; /* Text color */
+    text-shadow: 0 0 10px #ffcc00; /* Glowing text effect */
+}
+
+/* Features Container */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the features */
+    gap: 20px; /* Space between features */
+}
+
+/* Individual Feature Styles */
+.feature {
+    background-color: #fff; /* White background for each feature */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    padding: 20px; /* Padding inside the feature box */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition effects */
+    width: 250px; /* Fixed width for feature boxes */
+    position: relative; /* Position relative for pseudo-elements */
+}
+
+/* Glowing Effect on Feature Boxes */
+.feature:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Feature Heading Styles */
+.feature h3 {
+    font-size: 22px;
+    margin-bottom: 10px; /* Space below the heading */
+    color: #1e1e1e; /* Text color */
+    text-shadow: 0 0 5px #ffcc00; /* Glowing text effect */
+}
+
+/* Feature Paragraph Styles */
+.feature p {
+    font-size: 16px; /* Font size for the paragraph */
+    color: #555; /* Text color */
+}
+
+/* Animation for fading in the section */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with no opacity */
+    }
+    to {
+        opacity: 1; /* End with full opacity */
+    }
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column; /* Stack features vertically on mobile */
+        align-items: center; /* Center items */
+    }
+}
+
+.featured-courses {
+    background-color: #ffffff; /* White background */
+    padding: 40px 20px; /* Padding for top and bottom */
+    text-align: center; /* Center-align text */
+    margin: 40px 0; /* Margin to separate from other sections */
+    animation: fadeIn 1s ease; /* Animation for fading in the section */
+}
+
+.featured-courses h2 {
+    font-size: 32px; /* Font size for heading */
+    font-weight: 600; /* Bold font */
+    margin-bottom: 30px; /* Space below the heading */
+    color: #1e1e1e; /* Text color */
+}
+
+/* Course Cards Container */
+.course-cards {
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center the cards */
+    gap: 20px; /* Space between cards */
+}
+
+/* Individual Course Card Styles */
+.course-card {
+    background-color: #f4f4f4; /* Light gray background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    padding: 20px; /* Padding inside the card */
+    width: 250px; /* Fixed width for course cards */
+    transition: transform 0.3s; /* Transition effects */
+    position: relative; /* For positioning the image */
+}
+
+/* Course Card Image */
+.course-card img {
+    max-width: 100%; /* Responsive image */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+/* Hover Effect on Course Cards */
+.course-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Course Card Heading Styles */
+.course-card h3 {
+    font-size: 20px; /* Font size for course title */
+    margin-bottom: 10px; /* Space below the title */
+    color: #1e1e1e; /* Text color */
+}
+
+/* Course Card Paragraph Styles */
+.course-card p {
+    font-size: 14px; /* Font size for the description */
+    color: #555; /* Text color */
+    margin-bottom: 15px; /* Space below the description */
+}
+
+/* Button Styles */
+.course-btn {
+    display: inline-block; /* Block for button */
+    background-color: #ffcc00; /* Button background color */
+    color: #1e1e1e; /* Button text color */
+    padding: 10px 15px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.course-btn:hover {
+    background-color: #e6b800; /* Darker button color on hover */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+    animation: fadeIn 0.5s; /* Fade-in animation */
+}
+
+.modal-content {
+    background-color: #fff; /* White background */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px; /* Padding */
+    border: 1px solid #888; /* Border */
+    width: 80%; /* Width of the modal */
+    max-width: 600px; /* Max width */
+    border-radius: 10px; /* Rounded corners */
+    animation: slideIn 0.5s; /* Slide-in animation */
+}
+
+/* Close Button */
+.close {
+    color: #aaa; /* Gray color */
+    float: right; /* Float to the right */
+    font-size: 28px; /* Font size */
+    font-weight: bold; /* Bold font */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Change color on hover */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Modal Details Container */
+.modal-details {
+    display: flex; /* Flexbox layout */
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Allow wrapping */
+    margin-top: 20px; /* Space above the details */
+}
+
+/* Modal Card Styles */
+.modal-card {
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding */
+    flex: 1; /* Flex-grow */
+    min-width: 200px; /* Minimum width */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .course-cards {
+        flex-direction: column; /* Stack cards vertically on mobile */
+        align-items: center; /* Center items */
+    }
+}
+.cta-section {
+    background: linear-gradient(135deg, #4e73df, #1cc88a); /* Gradient background */
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Title Styling */
+.cta-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Subtitle Styling */
+.cta-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Button Styling */
+.cta-button {
+    background-color: #1cc88a;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: bounceIn 2.5s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #17a673;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Background Effects */
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse 6s infinite;
+}
+
+.cta-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse 8s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+.faq-section {
+    background: #f8f9fc; /* Light background */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    color: #333;
+}
+
+.faq-item {
+    background: #fff; /* White background for items */
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.faq-question {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #007bff; /* Primary color */
+    cursor: pointer; /* Indicate it can be clicked */
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+.faq-answer {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    display: none; /* Initially hide the answers */
+}
+
+/* Active class to show the answer */
+.faq-item.active .faq-answer {
+    display: block;
+}
+.contact-section {
+    background: #e9ecef; /* Light grey background */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    color: #333;
+}
+
+.contact-form {
+    background: #fff; /* White background for form */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resize only */
+}
+
+.submit-button {
+    background-color: #1cc88a; /* Button background */
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #17a673; /* Darker shade on hover */
+}
+
+.map-location {
+    margin-top: 40px;
+}
+
+.map-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.custom-footer {
+    background-color: #2c3e50; /* Darker background */
+    color: #ecf0f1; /* Light text color */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section {
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Uppercase headings */
+}
+
+.footer-section p,
+.footer-section a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #bdc3c7; /* Slightly lighter text color */
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #1cc88a; /* Highlight color on hover */
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #ecf0f1;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #1cc88a; /* Highlight color on hover */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid #34495e; /* Subtle top border */
+    padding-top: 10px;
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-section {
+        flex: 1;
+        padding: 0 20px;
+        text-align: left;
+    }
+}

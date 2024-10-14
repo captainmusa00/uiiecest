@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #1e1e1e;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 18px;
+            color: #555;
+            display: block;
+            margin: 15px 0 5px;
+        }
+
+        select, input[type="radio"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .mode-options label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #1e1e1e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffcc00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="dashboard.html">Home</a>
+        <a href="#">Programmes</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+        <a href="portal.html">Logout</a> <!-- Link to log out -->
+    </nav>
+
+    <div class="container">
+        <h1>Select Your Preferred Course</h1>
+
+        <form id="course-selection-form" action="payment.html" method="GET">
+            <label for="course">Choose a Course:</label>
+            <select id="course" name="course" required>
+                <option value="">-- Select a Course --</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Business Administration">Business Administration</option>
+                <option value="Psychology">Psychology</option>
+                <option value="Education">Education</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <!-- Add more courses as necessary -->
+            </select>
+
+            <label for="mode">Choose Mode of Study:</label>
+            <div class="mode-options">
+                <label>
+                    <input type="radio" name="mode" value="Conventional" required> Conventional
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="Online" required> Online
+                </label>
+            </div>
+
+            <button type="submit">Proceed to Payment</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2024 Your Portal. All rights reserved.
+    </footer>
+
+    <script>
+        // Ensure that the user has selected both a course and mode of study
+        const form = document.getElementById('course-selection-form');
+        form.addEventListener('submit', function (event) {
+            const course = document.getElementById('course').value;
+            const mode = document.querySelector('input[name="mode"]:checked');
+
+            if (!course || !mode) {
+                alert('Please select both a course and mode of study.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

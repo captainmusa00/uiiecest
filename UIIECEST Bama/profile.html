@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #1e1e1e;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .profile-box form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .profile-box label {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .profile-box input[type="text"], .profile-box input[type="file"], .profile-box input[type="email"], .profile-box input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .profile-box input[type="submit"] {
+            padding: 15px;
+            font-size: 18px;
+            background-color: #1e1e1e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .profile-box input[type="submit"]:hover {
+            background-color: #ffcc00;
+        }
+
+        .profile-box .profile-photo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile-photo img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #1e1e1e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="dashboard.html">Home</a>
+        <a href="programmes.html">Programmes</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+        <a href="portal.html">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h1>User Profile</h1>
+
+        <div class="profile-box">
+            <form id="profile-form" action="update_profile.php" method="post" enctype="multipart/form-data">
+                <!-- Profile Photo -->
+                <div class="profile-photo">
+                    <label for="profile-photo">Profile Photo:</label>
+                    <img src="default-profile.jpg" alt="Profile Photo" id="profile-img">
+                    <input type="file" id="profile-photo" name="profile-photo" accept="image/*" onchange="previewImage(event)">
+                </div>
+
+                <!-- Name -->
+                <div>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <!-- Phone -->
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <!-- Other Information -->
+                <div>
+                    <label for="additional-info">Additional Information:</label>
+                    <input type="text" id="additional-info" name="additional-info" placeholder="Any additional information">
+                </div>
+
+                <!-- Submit Button -->
+                <input type="submit" value="Save Changes">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Your Portal. All rights reserved.
+    </footer>
+
+    <script>
+        // Preview uploaded profile image
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const output = document.getElementById('profile-img');
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+
+</body>
+</html>
